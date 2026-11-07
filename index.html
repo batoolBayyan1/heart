@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أجمل حكاية ❤️</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #70213e, #350c20 60%, #16040d);
+  color: white;
+  font-family: Tahoma, Arial, sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 10px;
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  font-size: clamp(26px, 6vw, 40px);
+  color: #ffe2eb;
+  text-shadow: 0 0 20px #ff628e;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #ffc4d6;
+  font-size: 16px;
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+.date {
+  color: #ffb4cb;
+  font-size: 23px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin: 10px 0 30px;
+  text-shadow: 0 0 15px #ff628e;
+  direction: ltr;
+}
+
+.heart-container {
+  width: min(96vw, 760px);
+  filter: drop-shadow(0 10px 25px #ff174fcc);
+}
+
+.heart-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  direction: ltr;
+  clip-path: url(#heartClip);
+}
+
+.empty { visibility: hidden; aspect-ratio: 1; }
+
+.photo {
+  aspect-ratio: 1;
+  border: 3px solid #ffb2c8;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #8f2448;
+  box-shadow: 0 0 15px #ff719c88;
+  opacity: 0;
+  transform: scale(0.1) rotate(-15deg);
+  animation: appear 1.8s ease forwards;
+  animation-delay: var(--delay);
+  cursor: pointer;
+  transition: filter 0.3s;
+}
+
+.photo:hover { filter: brightness(1.15); }
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes appear {
+  to { opacity: 1; transform: scale(1) rotate(0); }
+}
+
+/* نافذة العبارة عند الضغط على الصورة */
+.popup {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 4, 12, 0.75);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 10;
+  padding: 20px;
+}
+
+.popup.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.popup-box {
+  max-width: 460px;
+  background: linear-gradient(145deg, #8f2448, #5a1630);
+  border: 2px solid #ffb2c8;
+  border-radius: 20px;
+  padding: 30px 24px;
+  font-size: clamp(18px, 4.5vw, 24px);
+  line-height: 2;
+  color: #fff0f5;
+  box-shadow: 0 0 35px #ff628e99;
+  transform: scale(0.7);
+  transition: transform 0.4s ease;
+}
+
+.popup.show .popup-box { transform: scale(1); }
+
+.popup-hint {
+  display: block;
+  margin-top: 14px;
+  font-size: 13px;
+  color: #ffc4d6;
+}
+
+.message {
+  max-width: 600px;
+  color: #ffe4ed;
+  font-size: clamp(17px, 4vw, 23px);
+  line-height: 2.2;
+  margin: 35px 12px 10px;
+  text-shadow: 0 0 10px #ff739d66;
+}
+
+.signature { color: #ff9fba; font-size: 18px; margin-top: 15px; }
+.footer { color: #eab1c2; font-size: 13px; margin-top: 25px; }
+
+.floating-heart {
+  position: fixed;
+  bottom: -40px;
+  color: #ff86aa;
+  pointer-events: none;
+  animation: floatUp linear forwards;
+  z-index: 1;
+}
+
+@keyframes floatUp {
+  0%   { transform: translateY(0) rotate(0); opacity: 0; }
+  20%  { opacity: 0.8; }
+  100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+
+@media(max-width: 450px) {
+  .heart-grid { gap: 5px; }
+  .photo { border-width: 2px; border-radius: 7px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1 style="direction:ltr">My One ❤️</h1>
+
+  <p class="subtitle">
+    في ذكريات ما بتنتسى...<br>
+    وفي أشخاص بيضلوا بالقلب مهما مرّ الوقت.
+  </p>
+
+  <div class="date">11 / 11 / 2026</div>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <clipPath id="heartClip" clipPathUnits="objectBoundingBox">
+      <path d="M0.5,1 C0.12,0.7 0,0.5 0,0.3 C0,0.12 0.13,0 0.27,0 C0.38,0 0.46,0.06 0.5,0.16 C0.54,0.06 0.62,0 0.73,0 C0.87,0 1,0.12 1,0.3 C1,0.5 0.88,0.7 0.5,1 Z"/>
+    </clipPath>
+  </svg>
+
+  <div class="heart-container">
+    <div class="heart-grid" id="heart"></div>
+  </div>
+<div class="message">
+    من بين كل أيام العمر، في أيام بتصير ذكرى،
+    وفي أشخاص بيصيروا عمر كامل...
+    <br>
+    وأنت أجمل حكاية بقلبي،
+    وأحلى تفصيل بأيامي.
+    <br>
+    كل صورة إلها ذكرى،
+    وكل ذكرى إلها مكان،
+    ومكانك دايماً بقلبي. ❤️
+  </div>
+
+  <div class="signature">بحبك    ❤️</div>
+  <div class="footer">إلك وحدك... من قلبي 💌</div>
+
+</div>
+
+<!-- نافذة العبارة -->
+<div class="popup" id="popup">
+  <div class="popup-box">
+    <span id="popupText"></span>
+  </div>
+</div>
+
+<script>
+const messages = [
+  "انت مو بس حبيبي انت راحتي وأماني واحلى تفاصيل أيامي ❤️",
+  "لو رجع فيني الوقت رح اختارك كل مرة 😍",
+  "معك حتى الأيام العادية بتصير حلوة ✨",
+  "كل لحظة معك هدية 🎁",
+  "عيونك بيتي وأماني 💫",
+  "كل يوم معك بيخليني اتاكد اني محظوظة فيك 🌹",
+  "أحلى صدفة صارت بحياتي ❤️",
+  "بوجودك الدنيا أحلى وما بتعرف اديه انا فخورة فيك 🌸",
+  "بحبك بكل حالاتك يخليلي ياك وما يحرمني من وجودك 💞",
+  "انت احلى صدفة ونصيبي الحلو واغلى انسان 🤍",
+  "انت حكاية قلبي الحلوة والحكاية اللي مابدي ياها تخلص  📖",
+  "حتى بأبسط لحظاتي بلاقي حالي عم فكر فيك 💕",
+  "حتى سكوتك بحبو لان وجودك لحالو بيكفيني 🌷",
+  "الله يوفقلي ياك ويحققلي كل احلامك وكون دايما حدك 🥰",
+  "انت دعوة قلبي الحلوة نشالله ع طول تكون مستجابة 🌈",
+  "بابا الأمور الحنون الله يحميلي ياك ❤️",
+  "يا رفيق عمري وكل حياتي  💍",
+  "رجالي وسندي وأماني  ❤️‍🔥",
+  "بنوتك كتير بتحبك وكتير واثقة فيك يا روح روحي 💌"
+];
+
+// شكل القلب - 19 صورة
+const pattern = [
+  "11111",
+  "11111",
+  "11111",
+  "01110",
+  "00100"
+];
+
+const heart = document.getElementById("heart");
+const popup = document.getElementById("popup");
+const popupText = document.getElementById("popupText");
+let photoNumber = 0;
+
+function placeholder(number) {
+  const colors = ["#a72e55", "#c34a70", "#70213f", "#d36b8b", "#8d254d", "#b83c66"];
+  const color = colors[(number - 1) % colors.length];
+
+  const svg =
+    '<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240">' +
+    '<rect width="240" height="240" fill="' + color + '"/>' +
+    '<circle cx="120" cy="85" r="35" fill="#ffe1eb"/>' +
+    '<path d="M35 240 Q45 130 120 145 Q195 130 205 240" fill="#ffe1eb"/>' +
+    '<text x="120" y="30" text-anchor="middle" fill="white" font-size="18">Memory ' + number + '</text>' +
+    '</svg>';
+
+  return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
+}
+
+function showMessage(n) {
+  popupText.textContent = messages[n - 1] || "بحبك ❤️";
+  popup.classList.add("show");
+}
+
+popup.addEventListener("click", function () {
+  popup.classList.remove("show");
+});
+
+pattern.forEach(function (row) {
+  row.split("").forEach(function (cell) {
+    const div = document.createElement("div");
+
+    if (cell === "1") {
+      photoNumber++;
+      const n = photoNumber;
+
+      div.className = "photo";
+      // سرعة الظهور: كل صورة بعد 1.2 ثانية من اللي قبلها (غيري الرقم 1.2 إذا بدك أبطأ أو أسرع)
+      div.style.setProperty("--delay", (0.5 + (n - 1) * 1.2) + "s");
+
+      const img = document.createElement("img");
+
+      // الصور 
+      img.src = "photos/photo" + n + ".jpg";
+      img.alt = "ذكرى جميلة";
+      div.appendChild(img);
+
+      div.addEventListener("click", function () {
+        showMessage(n);
+      });
+    } else {
+      div.className = "empty";
+    }
+
+    heart.appendChild(div);
+  });
+});
+
+// قلوب صغيرة متحركة
+function createHeart() {
+  const h = document.createElement("div");
+  h.className = "floating-heart";
+  h.innerHTML = "♥";
+  h.style.left = Math.random() * 100 + "vw";
+  h.style.fontSize = (12 + Math.random() * 22) + "px";
+  h.style.animationDuration = (6 + Math.random() * 7) + "s";
+  document.body.appendChild(h);
+  setTimeout(function () { h.remove(); }, 14000);
+}
+
+setInterval(createHeart, 500);
+
+</script>
+
+</body>
+</html>
